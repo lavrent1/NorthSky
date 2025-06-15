@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>NorthSky — Официальная страница</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #000;
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      overflow: hidden;
+    }
+
+    .container {
+      display: flex;
+      height: 100vh;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      text-align: center;
+      flex-direction: column;
+    }
+
+    .airplane-outline {
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      opacity: 0.1;
+    }
+
+    .fade-text {
+      font-size: 2em;
+      animation: fadeOut 3s ease-in-out forwards;
+    }
+
+    @keyframes fadeOut {
+      0% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+
+    .info {
+      display: none;
+      animation: fadeIn 2s ease-in-out forwards;
+      font-size: 1.1em;
+      max-width: 600px;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    footer {
+      position: absolute;
+      bottom: 20px;
+      font-size: 0.9em;
+      color: #888;
+      text-align: center;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <svg class="airplane-outline" width="150" height="150" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M2.5 19L21.5 12L2.5 5L2.5 10L17.5 12L2.5 14L2.5 19Z" />
+    </svg>
+
+    <div id="fadeText" class="fade-text">Приветствуем NorthSky</div>
+    <div id="infoText" class="info">
+      <p>Сайт создан Telegram-пользователем <strong>@Lavrenties</strong>.</p>
+      <p>Все посты написаны для канала <strong>Никитинская Республика (новости)</strong>:</p>
+      <p><a href="https://t.me/nikitinsky_region_news" target="_blank" style="color:#00adef;">https://t.me/nikitinsky_region_news</a></p>
+      <p>Все изображения на сайте сгенерированы с использованием нейросетей.  
+        <br>Контент защищён авторскими правами. Копирование запрещено.</p>
+    </div>
+  </div>
+
+  <footer>
+    © 2025 Ltd Lavrenties. Все права защищены.
+  </footer>
+
+  <script>
+    setTimeout(() => {
+      document.getElementById('fadeText').style.display = 'none';
+      const info = document.getElementById('infoText');
+      info.style.display = 'block';
+    }, 3000);
+  </script>
+</body>
+</html>
